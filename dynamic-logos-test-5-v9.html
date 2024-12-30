@@ -70,24 +70,42 @@
     <table width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
             <td align="center">
-                <!-- Conditional comments for Outlook -->
-                <!--[if mso]>
-        <img
-          src="light-mode-logo-url"
-          alt="Light Mode Logo"
-          class="logo-light"
-          style="display:block;"
-        />
-        <![endif]-->
 
-                <!-- Non-Outlook Clients -->
+                <!--[if mso]> 
+                    <img src="http://image.email.transamerica.com/lib/fe9415747d6c047b75/m/1/804cd745-aec3-4c87-b674-a46533020c54.png" alt="Light Mode Logo" class="logo-light" style="display:block;" width="235" />
+                <![endif]-->
+ 
                 <!--[if !mso]><!-->
-                <img src="light-mode-logo-url" alt="Light Mode Logo" class="logo-light" />
-                <img src="dark-mode-logo-url" alt="Dark Mode Logo" class="logo-dark" />
+                <img src="http://image.email.transamerica.com/lib/fe9415747d6c047b75/m/1/804cd745-aec3-4c87-b674-a46533020c54.png" alt="Light Mode Logo" class="logo-light" width="235" />
+                <img src="http://image.email.transamerica.com/lib/fe9415747d6c047b75/m/1/d2b1521a-1fdc-4cbe-8ea2-6f1021cd3e76.png" alt="Dark Mode Logo" class="logo-dark" width="235" />
                 <!--<![endif]-->
             </td>
         </tr>
     </table>
+    <table align="center">
+        <tr>
+          <td>
+            <div style="line-height: 115%; font-size:12px; Margin-bottom: 12px;">
+              <div style="text-align: center;">
+                To view this email as a web page,
+                <a alias="view_on_web" conversion="true" data-linkto="other" href="%%view_email_url%%"
+                  style="text-decoration:underline;font-weight:normal;line-height:100%;" title="click here">click here</a>.
+              </div>
+            </div>
+            <div style="line-height: 115%; font-size:12px; Margin-bottom: 12px;">
+              <strong>%%Member_Busname%%</strong>
+              <br>
+              %%Member_Addr%%, %%Member_City%%, %%Member_State%% %%Member_PostalCode%%
+            </div>
+            <div style="line-height: 115%; font-size:12px; Margin-bottom: 12px;">
+              <strong>Please do not reply to this email.</strong>
+            </div>
+            <div style="line-height: 115%; font-size:12px; Margin-bottom: 12px;">
+              <a href="%%profile_center_url%%">Click here</a> to update your email preferences.
+            </div>
+          </td>
+        </tr>
+      </table>
 </body>
 
 </html>
