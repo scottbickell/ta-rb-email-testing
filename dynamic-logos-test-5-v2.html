@@ -1,98 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="light dark">
-  <meta name="supported-color-schemes" content="light dark">
-  <title>Dark Mode Logo Test</title>
-  <style>
-    /* Signal that email supports light and dark modes */
-    :root {
-      color-scheme: light dark;
-    }
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="color-scheme" content="light dark">
+	<meta name="supported-color-schemes" content="light dark">
+	<title>Dark Mode Logo Test</title>
+	<style>
+		/* Signal that email supports light and dark modes */
+		:root {
+			color-scheme: light dark;
+		}
 
-    /* General styles for the email */
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #ffffff;
-      color: #000000;
-    }
+		/* General styles for the email */
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #ffffff;
+			color: #000000;
+		}
 
-    /* Default logo styles for light mode */
-    .logo {
-      display: none;
-      margin: 0 auto;
-      max-width: 200px;
-    }
+		/* Default logo styles for light mode */
+		.logo {
+			display: none;
+			margin: 0 auto;
+			max-width: 200px;
+		}
 
-    /* Gmail-specific styles using `u + body` */
-    u + body .logo-light {
-      display: block;
-    }
-    u + body .logo-dark {
-      display: none;
-    }
+		/* Gmail-specific styles using `u + body` */
+		u+body .logo-light {
+			display: block;
+		}
 
-    /* Dark mode styles */
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #121212;
-        color: #ffffff;
-      }
+		u+body .logo-dark {
+			display: none;
+		}
 
-      .logo-light {
-        display: none;
-      }
+		/* Dark mode styles */
+		@media (prefers-color-scheme: dark) {
+			body {
+				background-color: #121212;
+				color: #ffffff;
+			}
 
-      .logo-dark {
-        display: block;
-      }
-    }
+			.logo-light {
+				display: none;
+			}
 
-    /* Outlook-specific dark mode styles */
-    [data-ogsc] .logo-light {
-      display: none !important;
-    }
+			.logo-dark {
+				display: block;
+			}
+		}
 
-    [data-ogsc][data-ogsb-mode="dark"] .logo-dark {
-      display: block !important;
-    }
-  </style>
+		/* Outlook-specific dark mode styles */
+		[data-ogsc] .logo-light {
+			display: none !important;
+		}
+
+		[data-ogsc][data-ogsb-mode="dark"] .logo-dark {
+			display: block !important;
+		}
+	</style>
 </head>
+
 <body>
-  <!-- Wrapper table to ensure compatibility -->
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
-    <tr>
-      <td align="center">
-        <!-- Conditional comments for Outlook -->
-        <!--[if mso]>
-        <img
-          src="light-mode-logo-url"
-          alt="Light Mode Logo"
-          class="logo logo-light"
-          style="display:block;"
-        />
-        <![endif]-->
-        
-        <!-- Non-Outlook clients -->
-        <!--[if !mso]><!-->
-        <img
-          src="light-mode-logo-url"
-          alt="Light Mode Logo"
-          class="logo logo-light"
-          style="display:block;"
-        />
-        <img
-          src="dark-mode-logo-url"
-          alt="Dark Mode Logo"
-          class="logo logo-dark"
-          style="display:none;"
-        />
-        <!--<![endif]-->
-      </td>
-    </tr>
-  </table>
+	<!-- Wrapper table to ensure compatibility -->
+	<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+		<tr>
+			<td align="center">
+				<!-- Conditional comments for Outlook -->
+				<!--[if mso]>
+					<img
+					src="http://image.email.transamerica.com/lib/fe9415747d6c047b75/m/1/d2b1521a-1fdc-4cbe-8ea2-6f1021cd3e76.png"
+					alt="Light Mode Logo"
+					class="logo logo-light"
+					style="display:block;" width="235"
+					/>
+        		<![endif]-->
+
+				<!-- Non-Outlook clients -->
+				<!--[if !mso]><!-->
+				<img src="http://image.email.transamerica.com/lib/fe9415747d6c047b75/m/1/d2b1521a-1fdc-4cbe-8ea2-6f1021cd3e76.png"
+					alt="Light Mode Logo" class="logo logo-light" style="display:block;" width="235" />
+				<img src="http://image.email.transamerica.com/lib/fe9415747d6c047b75/m/1/804cd745-aec3-4c87-b674-a46533020c54.png"
+					alt="Dark Mode Logo" class="logo logo-dark" style="display:none;" width="235" />
+				<!--<![endif]-->
+			</td>
+		</tr>
+	</table>
+	<table align="center">
+		<tr>
+		  <td>
+			<div style="line-height: 115%; font-size:12px; Margin-bottom: 12px;">
+			  <div style="text-align: center;">
+				To view this email as a web page,
+				<a alias="view_on_web" conversion="true" data-linkto="other" href="%%view_email_url%%"
+				  style="text-decoration:underline;font-weight:normal;line-height:100%;" title="click here">click here</a>.
+			  </div>
+			</div>
+			<div style="line-height: 115%; font-size:12px; Margin-bottom: 12px;">
+			  <strong>%%Member_Busname%%</strong>
+			  <br>
+			  %%Member_Addr%%, %%Member_City%%, %%Member_State%% %%Member_PostalCode%%
+			</div>
+			<div style="line-height: 115%; font-size:12px; Margin-bottom: 12px;">
+			  <strong>Please do not reply to this email.</strong>
+			</div>
+			<div style="line-height: 115%; font-size:12px; Margin-bottom: 12px;">
+			  <a href="%%profile_center_url%%">Click here</a> to update your email preferences.
+			</div>
+		  </td>
+		</tr>
+	  </table>
 </body>
+
 </html>
