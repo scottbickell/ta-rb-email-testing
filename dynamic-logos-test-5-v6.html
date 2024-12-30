@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+  <title>Dark Mode Logo Test</title>
+  <style>
+    /* Light mode as default */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    .logo-light {
+      display: block;
+      margin: 0 auto;
+      max-width: 200px;
+    }
+
+    .logo-dark {
+      display: none;
+      margin: 0 auto;
+      max-width: 200px;
+    }
+
+    /* Dark mode: for clients supporting @media */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #121212;
+        color: #ffffff;
+      }
+
+      .logo-light {
+        display: none;
+      }
+
+      .logo-dark {
+        display: block;
+      }
+    }
+
+    /* Outlook-specific dark mode fixes */
+    [data-ogsc] .logo-light {
+      display: none !important;
+    }
+
+    [data-ogsc][data-ogsb-mode="dark"] .logo-dark {
+      display: block !important;
+    }
+
+    /* Gmail App-specific fixes */
+    u + body .logo-light {
+      display: block;
+    }
+
+    u + body .logo-dark {
+      display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      u + body .logo-light {
+        display: none !important;
+      }
+
+      u + body .logo-dark {
+        display: block !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Wrapper Table -->
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+    <tr>
+      <td align="center">
+        <!-- Conditional comments for Outlook -->
+        <!--[if mso]>
+        <img
+          src="light-mode-logo-url"
+          alt="Light Mode Logo"
+          class="logo-light"
+          style="display:block;"
+        />
+        <![endif]-->
+
+        <!-- Non-Outlook clients -->
+        <!--[if !mso]><!-->
+        <img
+          src="light-mode-logo-url"
+          alt="Light Mode Logo"
+          class="logo logo-light"
+          style="display:block;"
+        />
+        <img
+          src="dark-mode-logo-url"
+          alt="Dark Mode Logo"
+          class="logo logo-dark"
+          style="display:none;"
+        />
+        <!--<![endif]-->
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
