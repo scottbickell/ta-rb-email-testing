@@ -15,4 +15,8 @@ CSS styles that force a button to remain unchanged in dark mode and light mode (
   border-radius: 4px;
   display: inline-block;">
   Click Me
-</a>`
+</a>
+```
+
+## V7 Force light mode
+Remove the explicit and buggy dark mode support
