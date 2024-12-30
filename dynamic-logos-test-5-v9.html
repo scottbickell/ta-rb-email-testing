@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <title>Fix Gmail and Outlook Issues</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            /* Force light background */
+            color: #000000;
+            /* Force dark text */
+        }
+
+        .logo-light,
+        .logo-dark {
+            display: none;
+            /* Default: Hide all logos */
+            margin: 0 auto;
+            max-width: 200px;
+        }
+
+        /* Default: Light mode */
+        .logo-light {
+            display: block;
+        }
+
+        /* Gmail-specific dark mode targeting */
+        u+body .logo-light {
+            display: block !important;
+        }
+
+        u+body .logo-dark {
+            display: none !important;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            u+body .logo-light {
+                display: none !important;
+            }
+
+            u+body .logo-dark {
+                display: block !important;
+            }
+        }
+
+        /* Outlook-specific styles */
+        [data-ogsc] .logo-light {
+            display: block !important;
+        }
+
+        [data-ogsc][data-ogsb-mode="dark"] .logo-light {
+            display: none !important;
+        }
+
+        [data-ogsc][data-ogsb-mode="dark"] .logo-dark {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Wrapper Table -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td align="center">
+                <!-- Conditional comments for Outlook -->
+                <!--[if mso]>
+        <img
+          src="light-mode-logo-url"
+          alt="Light Mode Logo"
+          class="logo-light"
+          style="display:block;"
+        />
+        <![endif]-->
+
+                <!-- Non-Outlook Clients -->
+                <!--[if !mso]><!-->
+                <img src="light-mode-logo-url" alt="Light Mode Logo" class="logo-light" />
+                <img src="dark-mode-logo-url" alt="Dark Mode Logo" class="logo-dark" />
+                <!--<![endif]-->
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
