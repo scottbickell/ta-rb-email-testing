@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <meta name="supported-color-schemes" content="light">
+  <title>Light Mode Only Email</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff; /* Force light background */
+      color: #000000;           /* Force dark text */
+    }
+
+    .logo-container {
+      text-align: center;
+      background-color: #ffffff; /* Force light background */
+      padding: 20px;
+    }
+
+    .logo-light {
+      display: block;
+      margin: 0 auto;
+      max-width: 200px;
+    }
+
+    .logo-dark {
+      display: none; /* Default: hide dark mode logo */
+      margin: 0 auto;
+      max-width: 200px;
+    }
+
+    /* Gmail-specific targeting */
+    u + body .logo-light {
+      display: block;
+    }
+    u + body .logo-dark {
+      display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      u + body .logo-light {
+        display: none !important;
+      }
+      u + body .logo-dark {
+        display: block !important;
+      }
+    }
+
+    /* Outlook-specific dark mode targeting */
+    [data-ogsc] .logo-light {
+      display: block !important; /* Force light mode logo */
+    }
+
+    [data-ogsc][data-ogsb-mode="dark"] .logo-light {
+      display: none !important;
+    }
+
+    [data-ogsc][data-ogsb-mode="dark"] .logo-dark {
+      display: block !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Wrapper Table -->
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td class="logo-container">
+        <!-- Light Mode Logo -->
+        <img
+          src="light-mode-logo-url"
+          alt="Light Mode Logo"
+          class="logo-light"
+        />
+        
+        <!-- Dark Mode Logo -->
+        <img
+          src="dark-mode-logo-url"
+          alt="Dark Mode Logo"
+          class="logo-dark"
+        />
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
