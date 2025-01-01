@@ -1,5 +1,7 @@
 # Dark mode & dynamic logo support
 
+<br>
+
 **DYNAMIC LOGO?** We have two logo images. One is for light mode (red icon, black text), the other is for dark mode (all white)
 
 **GOAL**
@@ -23,7 +25,7 @@ Adopt a light mode-only strategy for now to ensure brand consistency and minimiz
 
 <br>
 
-## Key Issues Encountered
+## Key issues encountered
 
 **Gmail (Android/iOS Dark Mode):**
 
